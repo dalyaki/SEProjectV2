@@ -46,6 +46,9 @@ public class Exception extends Frame implements ActionListener {
 		myGBL.setConstraints(problemMessage, myGBC);
 		add(problemMessage);
 		
+		
+		System.out.println ("hier steht neuer Text");
+		
 
 		
 		pack();
