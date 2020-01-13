@@ -6,7 +6,8 @@ public class Main {
 	public static database.allProducts.AllProductsInList List = new database.allProducts.AllProductsInList();
 	
 	public static void main(String[] args) {
-		userInterface.mainWindow.MainWindow myMainWindow = new userInterface.mainWindow.MainWindow (); 
+		//userInterface.mainWindow.MainWindow myMainWindow = new userInterface.mainWindow.MainWindow (); 
+		userInterface.addProductInterface.AddProduct myProductInterface = new userInterface.addProductInterface.AddProduct();
 		//start.userInterface.productView.ProductView myProductView = new start.userInterface.productView.ProductView (); 
 		//exeptions.Exception myException1 = new exeptions.Exception ("there is a Problem");
 	}

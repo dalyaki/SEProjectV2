@@ -3,6 +3,7 @@ package userInterface.addProductInterface;
 import java.awt.event.ActionEvent;
 import java.lang.Exception;
 
+import database.allProducts.AllProducts;
 import database.singleProduct.Product;
 
 import java.awt.Button;
@@ -15,6 +16,24 @@ public class AddProduct extends Interface {
 		super();	
 	} // addProduct	
 	
+	public int addProductToShelf(String description, String newCategory, String stocknumber, String price, String weight, String quantity) {
+    	int weightN = AllProducts.parseToInt(weight);
+    	int quantityN = AllProducts.parseToInt(quantity);
+    	int priceN = AllProducts.parseToInt(price);
+    	int stocknumberN = AllProducts.parseToInt(stocknumber);
+    	
+    	database.singleProduct.Product p = new	database.singleProduct.Product(description, weightN, quantityN, priceN, stocknumberN, newCategory);
+		int ShelfNr = number/1000;
+		
+		try {start.Main.Datenbank.addProduct2(ShelfNr,p); this.dispose();
+		} catch (Exception exception) {
+			exeptions.Exception newException = new exeptions.Exception(exception.getMessage());
+		} 
+		
+		
+		return 0;
+	}
+	/*
 	@Override
 	public void actionPerformed(ActionEvent e){
 		
@@ -29,12 +48,12 @@ public class AddProduct extends Interface {
 			Product p = new	Product(name, weight, amount, price, number, category);
 			int ShelfNr = number/1000;
 			
-			try {start.Main.Datenbank.addProduct(ShelfNr,p); this.dispose();
+			try {start.Main.Datenbank.addProduct2(ShelfNr,p); this.dispose();
 			} catch (Exception exception) {
 				exeptions.Exception newException = new exeptions.Exception(exception.getMessage());
 			}
 			
 		}
-	}
+	}*/
 	
 } // public class addProduct
