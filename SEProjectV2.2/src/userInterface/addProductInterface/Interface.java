@@ -236,7 +236,7 @@ public class Interface extends Frame implements ActionListener {
         
       
         if (i.contains(0)) {
-        	addProduct.addPr
+        	//addProduct.addPr
         	
         	this.dispose();} //Product is initialized succesfully, window gets closed
         

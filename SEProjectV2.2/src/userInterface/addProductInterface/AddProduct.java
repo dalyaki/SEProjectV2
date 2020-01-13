@@ -22,8 +22,10 @@ public class AddProduct extends Interface {
     	int priceN = AllProducts.parseToInt(price);
     	int stocknumberN = AllProducts.parseToInt(stocknumber);
     	
+    	
+    	
     	database.singleProduct.Product p = new	database.singleProduct.Product(description, weightN, quantityN, priceN, stocknumberN, newCategory);
-		int ShelfNr = number/1000;
+		int ShelfNr = stocknumberN/1000;
 		
 		try {start.Main.Datenbank.addProduct2(ShelfNr,p); this.dispose();
 		} catch (Exception exception) {
