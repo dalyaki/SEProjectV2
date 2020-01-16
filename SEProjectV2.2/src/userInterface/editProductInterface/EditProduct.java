@@ -29,6 +29,7 @@ public class EditProduct extends Interface {
 		//TODO delete Product from Database if Fehlermeldungen.empty()
 	}
 	
+	//After button has been pressed
 	public void addProductToShelf() {
      	
 		String name = quantityTF.getText();
