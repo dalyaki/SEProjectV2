@@ -7,15 +7,19 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Label;
 import java.awt.TextField;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 public class Layout extends JPanel{	
 
 	private static final long serialVersionUID = 1L;
 	public Button addProduct, search, editCategory; 
-	DataTable table = new DataTable();
 	JScrollPane pane;
+	JLabel term;
+	JTextField termTF;
 	
 	Layout(){
 		
@@ -62,7 +66,7 @@ public class Layout extends JPanel{
 		myGBC.gridy = 0;
 		myGBC.gridwidth = 1; 
 		myGBC.gridheight = 1; 
-		Label term = new Label ("Suchbegriff:");
+		term = new JLabel ("Suchbegriff:");
 		add(term,myGBC);
 		
 		// Search Input
@@ -71,7 +75,7 @@ public class Layout extends JPanel{
 		myGBC.gridwidth = 4; 
 		myGBC.gridheight = 1;
 		myGBC.fill = GridBagConstraints.BOTH;
-		TextField termTF = new TextField ();
+		termTF = new JTextField ();
 		add(termTF,myGBC);
 
 		// Table
@@ -80,7 +84,7 @@ public class Layout extends JPanel{
 		myGBC.gridwidth = 6;
 		myGBC.gridheight = 6; 
 		myGBC.fill = GridBagConstraints.BOTH;
-		pane = new JScrollPane(table);
+		pane = new JScrollPane(start.Main.table);
 		add(pane,myGBC);
 		
 		//GridBag solution
@@ -108,6 +112,6 @@ public class Layout extends JPanel{
 	
 	public void refreshTable() {
 		
-		table.setNewDatabase();
+		//table.setNewDatabase();
 	}
 }
