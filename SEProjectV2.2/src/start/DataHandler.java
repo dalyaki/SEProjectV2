@@ -9,19 +9,30 @@ package start;
  import java.nio.file.Path;
  import java.nio.file.Paths;
  import javax.swing.table.DefaultTableModel;
-
+/**
+*This is a class that handles the file manipulation of the database.
+*
+*/
  final class DataHandler {
  	final public static String HOMEDIR = System.getProperty("user.home"); // home directory on local pc
  	final public static String NEWLINE = System.getProperty("line.separator");
  	public static String MYPATH; // path to file
  	private static String filename = "\\table_data.txt";
 
+	 
+/**
+*	Creates a directory in the $HOME directory of the computer.
+*
+*/
  	static void make_directory() {
  		MYPATH = (HOMEDIR + "\\penfactory");
  		new File(MYPATH).mkdir();
 
  	}
-
+/**	
+*	Saves the contents of a TableModel on an external textfile.
+*	@param model TableModel to be saved
+*/
  	static void save(DefaultTableModel model) {
  		Path path = Paths.get(MYPATH + filename);
  		System.out.println(HOMEDIR);
@@ -43,6 +54,11 @@ package start;
  			e.printStackTrace();
  		}
  	}
+	 
+	 /**
+	 *Loads external textfile into a tablemodel.
+	 *@return TableModel to be created
+	 */
 
  	static DefaultTableModel load() {
  		String[] columnNames = {"Produktbezeichnung", "Anzahl", "Kategorie", "Stückpreis(in Cent)","Lagernummer", "Gewicht"};
