@@ -91,4 +91,12 @@ public class DataTable extends JTable{
 		return this.searchCheckboxes;
 	}
 	
+	/**
+	/Returns the shelf number at a row of a table
+	*/
+	String get_shelf(int row) {
+ 		Object rv= this.getValueAt(row, 4);
+ 		return ((String) rv).substring(0,3);
+ 	}
+	
 }
