@@ -27,7 +27,13 @@ public class DataTable extends JTable{
 	public static DefaultTableModel model= new DefaultTableModel( columNames, 0 );
 	ArrayList<JCheckBox> searchCheckboxes = new ArrayList<>();
 	TableRowSorter sorter;
-    
+    	/**
+	 * Constructs a table, assigning it a model, RowSorter, ArrayList of checkboxes,
+	 *and a mouse click listener
+	 * 
+	 */
+	
+	
 	public DataTable() {
 		
 		super(model);
@@ -38,7 +44,8 @@ public class DataTable extends JTable{
 		//setNewDatabase();
 		//TODO Open Editing frame with correct values
  		addMouseListener(new MouseAdapter() { 
- 	          public void mousePressed(MouseEvent e) { 
+			@Override
+ 	        	public void mousePressed(MouseEvent e) { 
  	        	int row = ((DataTable) e.getSource()).getSelectedRow();
  	        	if ((e.getClickCount()==2) && (row!=-1)) {
  	        		userInterface.editProductInterface.EditProduct editProduct = new userInterface.editProductInterface.EditProduct();
@@ -67,6 +74,11 @@ public class DataTable extends JTable{
 	    
 	}
 	
+	/**
+	 * returns int array of selected columns, as determined by the checked checkboxes
+	 *@return int[] of checkboxes
+	 */
+	
 	@Override
 	// returns selected checkboxes
 	public int[] getSelectedColumns() {
@@ -86,7 +98,9 @@ public class DataTable extends JTable{
 		return rv;
 
 	}
-
+	/**
+	*@return checkboxes
+	*/
 	ArrayList<JCheckBox> getCheckboxes() {
 		return this.searchCheckboxes;
 	}
