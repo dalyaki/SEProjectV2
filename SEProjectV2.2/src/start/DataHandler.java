@@ -23,6 +23,8 @@ package start;
  	}
 
  	static void save(DefaultTableModel model) {
+		File file=new File(MYPATH+filename);
+		file.setWritable(true);
  		Path path = Paths.get(MYPATH + filename);
  		try (BufferedWriter writer = Files.newBufferedWriter(path)) {
  			for (int row = 0; row < model.getRowCount(); row++) {
@@ -38,6 +40,7 @@ package start;
  		} catch (Exception e) {
  			e.printStackTrace();
  		}
+		file.setReadOnly(true);
  	}
 
  	static DefaultTableModel load() {
